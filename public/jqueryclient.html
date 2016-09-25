@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Taxi (jQuery)</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+</head>
+<body>
+<h1>My Taxi</h1>
+<form>
+    <input id="distance">
+    <input id='calc' type="button" value="Calculate">
+    <input id="cost" readonly>
+</form>
+<script>
+    $("#calc").click(function () {
+        var distance = parseFloat($("#distance").val());
+        $.getJSON("/api/cost?distance="+distance,function (data) {
+            $("#cost").val(data.cost);
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!doctype html>
+<html ng-app="myTaxiApp">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="javascripts/mytaxi.js"></script>
+</head>
+<body>
+<h2>MyTaxi</h2>
+<div ng-controller="PriceController as priceController">
+    <input id="distance" ng-model="distance" ng-change="calc()">
+    <input id="cost" readonly ng-model="cost">
+</div>
+</body>
+</html>
